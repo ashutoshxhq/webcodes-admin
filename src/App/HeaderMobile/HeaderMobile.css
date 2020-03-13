@@ -1,0 +1,5 @@
+@media (max-width: 1024px){
+
+    .kt-header__topbar-icon .kt-svg-icon g [fill] {fill: #484f66!important;}
+    .kt-header__topbar-icon .show .kt-svg-icon g [fill] {fill: #ffffff!important;}
+}
