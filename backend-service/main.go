@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/routes"
+	"webcodes.dev/admin/routes"
 )
 
 func main() {

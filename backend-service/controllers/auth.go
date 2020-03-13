@@ -9,8 +9,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
-	"webkodes.com/admin/models"
-	"webkodes.com/admin/utils"
+	"webcodes.dev/admin/models"
+	"webcodes.dev/admin/utils"
 )
 
 var jwtKey = []byte("my_secret_key")
@@ -56,8 +56,8 @@ func Login(c *gin.Context) {
 				models.UpdateUser(bson.M{"tokens": u.Tokens}, bson.M{"_id": user.ID})
 				user := models.GetSingleUser(bson.M{"_id": user.ID})
 				if user.Tokens.AccessToken == u.Tokens.AccessToken {
-					c.SetCookie("token", u.Tokens.AccessToken, 1.577e+7, "", "webkodes.com", true, true)
-					c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webkodes.com", true, false)
+					c.SetCookie("token", u.Tokens.AccessToken, 1.577e+7, "", "webcodes.dev", true, true)
+					c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webcodes.dev", true, false)
 					c.JSON(http.StatusOK, gin.H{
 						"status":  "success",
 						"message": "User logged in",
@@ -110,8 +110,8 @@ func addUserAfterVerification(c *gin.Context, userFromRequest models.User) {
 		models.InsertUser(userFromRequest)
 		user := models.GetSingleUser(bson.M{"username": userFromRequest.Username})
 		if user.Username == userFromRequest.Username {
-			c.SetCookie("token", user.Tokens.AccessToken, 1.577e+7, "", "webkodes.com", true, true)
-			c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webkodes.com", true, false)
+			c.SetCookie("token", user.Tokens.AccessToken, 1.577e+7, "", "webcodes.dev", true, true)
+			c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webcodes.dev", true, false)
 			c.JSON(http.StatusOK, gin.H{
 				"status":  "success",
 				"message": "Account created successful",
@@ -290,8 +290,8 @@ func RefreshToken(c *gin.Context) {
 			user := models.GetSingleUser(bson.M{"_id": user.ID})
 			fmt.Println(user)
 			if user.Tokens.AccessToken == u.Tokens.AccessToken {
-				c.SetCookie("token", u.Tokens.AccessToken, 1.577e+7, "", "webkodes.com", true, true)
-				c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webkodes.com", true, false)
+				c.SetCookie("token", u.Tokens.AccessToken, 1.577e+7, "", "webcodes.dev", true, true)
+				c.SetCookie("isLoggedIn", "true", 1.577e+7, "", "webcodes.dev", true, false)
 				c.JSON(http.StatusOK, gin.H{
 					"status":  "success",
 					"message": "User logged in",

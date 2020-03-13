@@ -8,7 +8,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"webkodes.com/admin/utils"
+	"webcodes.dev/admin/utils"
 )
 
 // Tokens  model for storing jwt token

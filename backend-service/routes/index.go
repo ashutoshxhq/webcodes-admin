@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/controllers"
+	"webcodes.dev/admin/controllers"
 )
 
 // IndexRouter router for handling index routes

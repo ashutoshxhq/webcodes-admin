@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/controllers"
+	"webcodes.dev/admin/controllers"
 )
 
 // AuthRouter router for handling auth routes
